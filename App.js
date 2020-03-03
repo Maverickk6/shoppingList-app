@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert } from 'react-native';
 import Header from './components/header';
 //import { v4 as uuidv4 } from 'uuid';
 import ListItem from './components/listItem';
@@ -27,9 +27,13 @@ export default function App() {
   }
 
   const addItem = (text) => {
+    if (!text) {
+      Alert.alert('Error', 'Please enter an Item to be added', [{text: 'Ok'}] )
+    } else {
     setShopItems(prevItems => {
       return[{id: Math.random().toFixed(5), text }, ...prevItems]
     })
+   }
   }
 
   return (

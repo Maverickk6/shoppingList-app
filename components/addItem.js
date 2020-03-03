@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
@@ -7,7 +7,7 @@ const AddItem = ({ addItem }) => {
 
     const [text, setText] = useState('');
 
-    const onChange = textValue => setText(textValue)
+    const onChange = textValue => setText(textValue);
 
     return (
         <View>
@@ -16,7 +16,9 @@ const AddItem = ({ addItem }) => {
                        onChangeText = {onChange} />
             <TouchableOpacity style = {styles.btn}
                               onPress = {() => addItem(text)}>
-                <Text style = {styles.btnText}> <Icon name = "plus" size = {20} /> Add Item </Text>
+                <Text style = {styles.btnText}> 
+                    <Icon name = "plus" size = {20} /> Add Item 
+                </Text>
             </TouchableOpacity>
         </View>
     );
